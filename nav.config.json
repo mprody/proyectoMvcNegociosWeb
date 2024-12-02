@@ -19,6 +19,22 @@
       "id": "Menu_SignUp",
       "nav_url": "index.php?page=productos-catalogo",
       "nav_label":"<i class=\"fas fa-sign-in-alt\"></i>&nbsp;Catalogo"
+    },
+    {
+      "id": "Menu_SignUp",
+      "nav_url": "index.php?page=Products-rolesList",
+      "nav_label":"<i class=\"fas fa-table\"></i>&nbsp;Roles",
+      "roles": ["admin"]
+    },
+    {
+      "id": "Menu_Products",
+      "nav_url": "index.php?page=Security-UsersList",
+      "nav_label":"<i class=\"fas fa-table\"></i>&nbsp;Usuarios"
+    },
+    {
+      "id": "Menu_Products",
+      "nav_url": "index.php?page=Funciones-FuncionesList",
+      "nav_label":"<i class=\"fas fa-table\"></i>&nbsp;Funciones"
     }
 
     
@@ -28,6 +44,11 @@
       "id":"Menu_PaymentCheckout",
       "nav_url": "index.php?page=Checkout_Checkout",
       "nav_label": "Carretilla de Compra"
+    },    
+    {
+      "id": "Menu_PaymentCheckout",
+      "nav_url": "index.php?page=Funciones-FuncionesList",
+      "nav_label":"<i class=\"fas fa-table\"></i>&nbsp;Funciones"
     }
   ]
 }
