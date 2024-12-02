@@ -14,7 +14,14 @@
       "id": "Menu_SignUp",
       "nav_url": "index.php?page=productos-inventario",
       "nav_label":"<i class=\"fas fa-sign-in-alt\"></i>&nbsp;Inventario"
+    },
+    {
+      "id": "Menu_SignUp",
+      "nav_url": "index.php?page=productos-catalogo",
+      "nav_label":"<i class=\"fas fa-sign-in-alt\"></i>&nbsp;Catalogo"
     }
+
+    
   ],
   "private": [
     {
