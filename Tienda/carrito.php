@@ -44,31 +44,40 @@ if (isset($_POST["btnAccion"])) {
                     "PRECIO" => $PRECIO
                 );
                 $_SESSION["CARRITO"][0] = $producto;
+                $mensaje = "Producto Agregado Al Carrito";
             } else {
-                $NumeroProductos = count($_SESSION["CARRITO"]);
-                $producto = array(
-                    "ID" => $ID,
-                    "NOMBRE" => $NOMBRE,
-                    "CANTIDAD" => $CANTIDAD,
-                    "PRECIO" => $PRECIO
-                );
-                $_SESSION["CARRITO"][$NumeroProductos] = $producto;
+                $idProductos = array_column($_SESSION["CARRITO"], "ID");
+                if (in_array($ID, $idProductos)) {
+                    echo "<script>alert('El Producto ya fue seleccionado...');</script>";
+                    $mensaje= "";
+                } else {
+
+                    $NumeroProductos = count($_SESSION["CARRITO"]);
+                    $producto = array(
+                        "ID" => $ID,
+                        "NOMBRE" => $NOMBRE,
+                        "CANTIDAD" => $CANTIDAD,
+                        "PRECIO" => $PRECIO
+                    );
+                    $_SESSION["CARRITO"][$NumeroProductos] = $producto;
+                    $mensaje = "Producto Agregado Al Carrito";
+                }
             }
-            $mensaje = print_r($_SESSION, true);
+            //$mensaje = print_r($_SESSION, true);
 
             break;
-            case "Eliminar":
-                if (is_numeric(openssl_decrypt($_POST["ID"], COD, KEY))) {
-                    $ID = openssl_decrypt($_POST["ID"], COD, KEY);
-                    $mensaje .= "Codigo Producto Correcto " . $ID . "<br/>";
-                    foreach($_SESSION["CARRITO"] as $indice=>$producto){
-                        if($producto["ID"]==$ID){
-                            unset($_SESSION["CARRITO"][$indice]);
-                            echo "<script>alert('Elemento Borrado...');</script>";
-                        }
+        case "Eliminar":
+            if (is_numeric(openssl_decrypt($_POST["ID"], COD, KEY))) {
+                $ID = openssl_decrypt($_POST["ID"], COD, KEY);
+                $mensaje .= "Codigo Producto Correcto " . $ID . "<br/>";
+                foreach ($_SESSION["CARRITO"] as $indice => $producto) {
+                    if ($producto["ID"] == $ID) {
+                        unset($_SESSION["CARRITO"][$indice]);
+                        echo "<script>alert('Elemento Borrado...');</script>";
                     }
-                } else {
-                    $mensaje .= "Codigo Producto Incorrecto " . $ID . "<br/>";
+                }
+            } else {
+                $mensaje .= "Codigo Producto Incorrecto " . $ID . "<br/>";
                 break;
             }
             break;

@@ -41,7 +41,7 @@ include "templates/header.php";
 
                     <form action="" method="post">
                         /*Aqui se mandan los datos al carrito mas se encriptan*/
-                        <input type="text" name="ID" id="ID" value="<?php echo openssl_encrypt($producto['codProducto'], COD, KEY); ?>">
+                        <input type="hidden" name="ID" id="ID" value="<?php echo openssl_encrypt($producto['codProducto'], COD, KEY); ?>">
                         <input type="hidden" name="Nombre" id="Nombre" value="<?php echo openssl_encrypt($producto['nombreProducto'], COD, KEY); ?>">
                         <input type="hidden" name="Precio" id="Precio" value="<?php echo openssl_encrypt($producto['precioVenta'], COD, KEY); ?>">
                         <input type="hidden" name="Cantidad" id="Cantidad" value="<?php echo openssl_encrypt(1, COD, KEY); ?>">

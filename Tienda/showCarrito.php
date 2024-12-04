@@ -50,6 +50,36 @@ include "templates/header.php";
                 </td>
                 <td></td>
             </tr>
+            //Aqui esta la base del Paypal
+            <tr>
+                <td colspan="5">
+                    <form action="pagar.php" method="post">
+                        <div class="alert alert-success">
+                            <div class="form-group">
+                                <label for="my-input">Correo Electronico</label>
+                                <input id="email"
+                                    name="email"
+                                    class="form-control"
+                                    type="email"
+                                    placeholder="Ejemplo@Email.com"
+                                    required>
+                            </div>
+                            <small id="emailHelp"
+                                class="form-text text-muted">
+                                La Factura se Enviara a este correo
+                            </small>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-primary btn-lg"
+                                type="submit"
+                                name="btnAccion"
+                                value="proceder">
+                                Proceder a Pagar
+                            </button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
         </tbody>
     </table>
 <?php } else { ?>
