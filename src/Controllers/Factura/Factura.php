@@ -7,13 +7,14 @@ use Dao\Factura\FacturaModel;
 use Dao\Factura\DetalleVentaModel;
 use Views\Renderer;
 
-class Factura extends PublicController
+class Factura extends PrivateController
 {
     public function run(): void
     {
         $codFactura = isset($_GET['codFactura']) ? $_GET['codFactura'] : null;
         $facturaDao = FacturaModel::obtenerFacturaPorCodigo($codFactura);
         $detalleDao = DetalleVentaModel::obtenerDetallesPorFactura($codFactura);
+        $clienteDao = FacturaModel::obtenerNombreCliente($codFactura);
 
         $porcentajeImpuesto = $facturaDao['impuestoFactura'] / 100;
 
@@ -23,6 +24,7 @@ class Factura extends PublicController
 
 
         $viewfactura = $facturaDao;
+        $viewCliente = $clienteDao;
 
         $viewdetalle = [];
         foreach($detalleDao as $detalle) {
@@ -39,6 +41,7 @@ class Factura extends PublicController
         $viewData['subtotalFactura'] = $subtotal;
         $viewData['impuestoFactura'] = $impuesto;
         $viewData['totalFactura'] = $totalFactura;
+        $viewData['username'] = $viewCliente;
 
         Renderer::render('factura/factura_list', $viewData);
     }
