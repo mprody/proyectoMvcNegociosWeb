@@ -12,4 +12,11 @@ class FacturaModel extends Table
         $factura = self::obtenerUnRegistro($sqlstr, ["codFactura" => $codFactura]);
         return $factura;
     }
+
+    public static function obtenerNombreCliente($codFactura)
+    {
+        $sqlstr = "SELECT u.username FROM usuario AS u INNER JOIN factura AS f ON u.usercod = f.usercod WHERE codFactura = :codFactura;";
+        $nombreCliente = self::obtenerUnRegistro($sqlstr, ["codFactura" => $codFactura]);
+        return $nombreCliente;
+    }
 }

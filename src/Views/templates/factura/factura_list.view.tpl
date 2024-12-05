@@ -84,7 +84,7 @@ h3.text-center {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Factura</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
   <style>
     /* Estilos para el contenedor del botón */
     .print-button-container {
@@ -147,6 +147,13 @@ h3.text-center {
       <p class="col-12 col-m-9" id="fechaFactura">{{fechaFactura}}</p>
     </div>
     {{endwith factura}}
+    {{with username}}
+    <div class="row my-2 align-center">
+      <label class="col-12 col-m-3" for="username">CLIENTE:</label>
+      <p class="col-12 col-m-9" id="username">{{username}}</p>
+    </div>
+    {{endwith username}}
+
   </section>
 
   <h3 class="text-center">Detalles</h3>
@@ -178,7 +185,7 @@ h3.text-center {
   <section class="align-right-container row px-4 py-4" style="margin-left: auto; margin-right: 0;">
     <div class="align-right-row my-2">
       {{with factura}}
-      <label for="impuesto {{impuestoFactura}}">IMPUESTO:</label>
+      <label for="impuesto {{impuestoFactura}}">IMPUESTO({{impuestoFactura}}%):</label>
       {{endwith factura}}
       <p id="impuesto">L. {{impuestoFactura}}</p>
     </div>
