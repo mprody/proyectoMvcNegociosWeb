@@ -95,7 +95,7 @@ if ($_POST) {
                     transactions: [{
                         amount: {
                             total: '<?php echo $total; ?>',
-                            currency: 'LPS'
+                            currency: 'MXN'
                         },
                     }]
                 }
