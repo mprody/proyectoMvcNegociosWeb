@@ -2,12 +2,12 @@
 namespace Dao\Productos;
 use Dao\Table;
 
-class productosD extends Table{
-    
-    public static function obtenerProductos(){
-        $sqlstr='select * from productos';
-        $productos=self::obtenerRegistros($sqlstr,[]);
-        return $productos;
+class productosD extends Table 
+{
+    public static function obtenerProductos()
+    {
+        $sqlstr = 'SELECT * FROM productos';
+        return self::obtenerRegistros($sqlstr, []);
     }
 }
 
