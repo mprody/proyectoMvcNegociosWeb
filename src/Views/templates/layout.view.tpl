@@ -188,7 +188,7 @@
    </style>
 </head>
 <body>
-   <nav class="navbar">
+   <nav class="navbar no-print">
        <div class="navbar-container">
            <a href="index.php?page={{PUBLIC_DEFAULT_CONTROLLER}}" class="navbar-brand">
                <img src="https://via.placeholder.com/40" alt="Logo Ferretería">
@@ -253,7 +253,7 @@
        {{{page_content}}}
    </main>
 
-   <footer>
+   <footer class="no-print">
        <div class="footer-container">
            <div class="footer-section">
                <h3>Nuestra Empresa</h3>
