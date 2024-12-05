@@ -33,6 +33,17 @@
             <li><a href="{{nav_url}}">{{nav_label}}</a></li>
         {{endfor NAVIGATION}}
         <li><a href="index.php?page=sec_logout"><i class="fas fa-sign-out-alt"></i>&nbsp;Salir</a></li>
+        <li><a href="index.php?page=Funciones-FuncionesList"><i class="fas fa-sign-in-alt"></i>&nbsp;Funciones</a></li>
+        <li><a href="index.php?page=Products-rolesList"><i class="fas fa-sign-in-alt"></i>&nbsp;Roles</a></li>
+        <li><a href="index.php?page=Security-UsersList"><i class="fas fa-sign-in-alt"></i>&nbsp;Usuarios</a></li>
+        <li><a href="index.php?page=productos-catalogo"><i class="fas fa-sign-in-alt"></i>&nbsp;Catalogo</a></li>
+        <li><a href="index.php?page=productos-inventario"><i class="fas fa-sign-in-alt"></i>&nbsp;Catalogo</a></li>
+
+        <li><a href="index.php?page=Security-UsersList"><i class="fas fa-sign-in-alt"></i>&nbsp;Productos</a></li>
+        <li><a href="index.php?page=Security-UsersList"><i class="fas fa-sign-in-alt"></i>&nbsp;Ventas</a></li>
+        <li><a href="index.php?page=Security-UsersList"><i class="fas fa-sign-in-alt"></i>&nbsp;Factura</a></li>
+        <li><a href="index.php?page=Security-UsersList"><i class="fas fa-sign-in-alt"></i>&nbsp;Proveedores</a></li>
+        <li><a href="index.php?page=Security-UsersList"><i class="fas fa-sign-in-alt"></i>&nbsp;Reportes</a></li>
       </ul>
     </nav>
     {{with login}}
