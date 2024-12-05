@@ -213,11 +213,6 @@
         </a>
     </li>
     <li>
-        <a href="index.php?page=productos-inventario">
-            <i class="fas fa-boxes"></i>&nbsp;Inventario
-        </a>
-    </li>
-    <li>
         <a href="index.php?page=productos-catalogo">
             <i class="fas fa-store"></i>&nbsp;Catálogo
         </a>
