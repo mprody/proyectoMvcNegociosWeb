@@ -84,7 +84,7 @@ if ($_POST) {
 
         client: {
             sandbox: 'AXLQBD6JjgWuaGX4Izd5K3VqCeoE_dMPG4AFjNQyawgOx-406eMc1syHxQ1U0qNmDBPUgUgamhkmOPz_',
-            production: ''
+            production: 'AZ7m9Y-ka2e-sl2BTVZuWuR6JEJ3O4Hi54ViNUoL9FtO9_abLT0aVb0Gidw16sE1mIs5wTw0AarvHLPB'
         },
 
         // Wait for the PayPal button to be clicked
@@ -97,6 +97,8 @@ if ($_POST) {
                             total: '<?php echo $total; ?>',
                             currency: 'MXN'
                         },
+                        descripcion: "Compra Ferreteria Sumar:LPS<?php echo number_format($total, 2); ?>",
+                        custom: "<?php echo $SID; ?>#<?php echo openssl_encrypt($idVenta, COD, KEY); ?>"
                     }]
                 }
             });
@@ -106,7 +108,8 @@ if ($_POST) {
 
         onAuthorize: function(data, actions) {
             return actions.payment.execute().then(function() {
-                window.alert('Pago Completado');
+                console.log(data);
+                window.location = "verificadorpaypal.php?paymentToken=" + data.paymentToken + "&paymentID=" + data.paymentID;
             });
         }
 
